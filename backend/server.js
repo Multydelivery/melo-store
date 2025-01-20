@@ -16,10 +16,7 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-// Enable CORS for all routes and specify the origin for security
-app.use(cors({
-    origin: 'https://melo-store-e965.vercel.app' // Adjust this if you have multiple clients
-}));
+app.use(cors())
 
 // api endpoints
 app.use('/api/user',userRouter)
