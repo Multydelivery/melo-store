@@ -19,7 +19,7 @@ app.use(express.json())
 
 // CORS configuration
 const corsOptions = {
-    origin: 'https://melo-store-e965.vercel.app', // Specify allowed origin
+    origin: 'https://melo-store-iccy.vercel.app/api/user/admin', // Specify allowed origin
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));
