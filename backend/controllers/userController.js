@@ -71,7 +71,7 @@ const registerUser = async (req, res) => {
         const newUser = new userModel({
             name,
             email,
-            password: hashedPassword,
+            password: hashedPassword
         });
 
         const user = await newUser.save();
@@ -105,7 +105,7 @@ const adminLogin = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Something went wrong" });
+        res.json({ success: false, message: error.message });
     }
 }
 
