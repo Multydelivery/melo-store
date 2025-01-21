@@ -17,7 +17,7 @@ const LatestCollection = () => {
         <div className='text-center py-8 text-3xl'>
           <Title text1={'LATEST'} text2={'COLLECTION'} />
           <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+            Melo Store is a place where you can find the latest and greatest products. We have a wide range of products to choose from.
           </p>
         </div>
       
