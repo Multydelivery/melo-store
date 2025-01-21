@@ -16,7 +16,14 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+    origin: 'https://melo-store-e965.vercel.app', // Adjust as needed
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include all methods you need to support
+    allowedHeaders: ['Content-Type', 'Authorization'] // Include all headers your requests may use
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Enable pre-flight for all routes if necessary
 
 // api endpoints
 app.use('/api/user',userRouter)
