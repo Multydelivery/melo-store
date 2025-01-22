@@ -14,6 +14,7 @@ const ShopContextProvider = (props) => {
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
+    const [cartCount, setCartCount] = useState(0);
     const [products, setProducts] = useState([]);
     const [token, setToken] = useState('')
     const navigate = useNavigate();
@@ -149,14 +150,20 @@ const ShopContextProvider = (props) => {
             getUserCart(localStorage.getItem('token'))
         }
     }, [])
-
+    
+    useEffect(() => {
+        const newCartCount = Object.values(cartItems).reduce((total, sizes) => {
+            return total + Object.values(sizes).reduce((sum, qty) => sum + qty, 0);
+        }, 0);
+        setCartCount(newCartCount);
+    }, [cartItems]);
 
     const value = {
         products,
         currency,
         delivery_fee,
         search, setSearch, showSearch, setShowSearch, cartItems, addToCart, setCartItems, getCartCount, updateQuantity, getCartAmount, navigate, backendUrl,
-        token, setToken
+        token, setToken, cartCount
     }
 
     return (
