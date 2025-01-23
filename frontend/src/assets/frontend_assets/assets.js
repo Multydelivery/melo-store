@@ -723,3 +723,34 @@ export const products = [
     }
 
 ]
+
+const accessories = [
+    {
+        _id: "aaaaa",
+        name: "Leather Belt",
+        description: "A belt made of leather.",
+        price: 100,
+        image: [p_img1],
+        category: "Accessories",
+        subCategory: "Belts",
+        sizes: ["S", "M", "L"],
+        date: 1716634345448,
+        bestseller: true
+    }
+]
+
+const shoes = [
+    {
+        _id: "aaaaa",
+        name: "Nike retro 4",
+        description: "A pair of Nike retro 4 shoes.",
+        price: 100,
+        image: ["https://via.placeholder.com/150"], // Replace with your image variable or URL
+        category: "Shoes",
+        subCategory: "Sneakers",
+        sizes: ["7", "8", "9", "10", "11"], // Example shoe sizes in US numbering
+        date: 1716634345448,
+        bestseller: true
+    }
+    // Add more shoe items here if needed
+];
