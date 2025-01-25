@@ -1,3 +1,4 @@
+import nike_retro_4_back from './nike_retro_4_back.jpeg'     
 import melo_logo from './melo_logo.png'
 import p_img1 from './p_img1.png'
 import p_img2_1 from './p_img2_1.png'
@@ -724,13 +725,13 @@ export const products = [
 
 ]
 
-const accessories = [
+export const accessories = [
     {
         _id: "aaaaa",
-        name: "Leather Belt",
+        name: "Nike retro 4",
         description: "A belt made of leather.",
         price: 100,
-        image: [p_img1],
+        image: [nike_retro_4_back],
         category: "Accessories",
         subCategory: "Belts",
         sizes: ["S", "M", "L"],
@@ -739,7 +740,7 @@ const accessories = [
     }
 ]
 
-const shoes = [
+export const shoes = [
     {
         _id: "aaaaa",
         name: "Nike retro 4",

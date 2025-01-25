@@ -164,7 +164,7 @@ const ShopContextProvider = (props) => {
         delivery_fee,
         search, setSearch, showSearch, setShowSearch, cartItems, addToCart, setCartItems, getCartCount, updateQuantity, getCartAmount, navigate, backendUrl,
         token, setToken, cartCount
-    }
+    } // values that are available to all components wrapped inside this provider
 
     return (
         <ShopContext.Provider value={value}>

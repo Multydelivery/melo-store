@@ -63,7 +63,7 @@ export default {
 40. create a ShopContext.jsx file in context folder to save all the state variable
 41. import { createContex } from 'react'
 42. create LatestCollection.jsx in components and mounted in Home.jsx
-43. import ShopContextProvider in main.jsx, and add it between <browserRouter><ShopContextProvider><App /></ShopContextProvider></BrowserRouter>
+43. import ShopContextProvider in main.jsx, and add it between <browserRouter><ShopContextProvider><App /></ShopContextProvider></BrowserRouter> this to use ShopConntest provider in any component
 44. create Title File.jsx components and mounted in LatestCollection.jsx
 45. add const [latestProducts, setLatestProducts] = useState([]) to add first 10 products
 46. useEffect()
