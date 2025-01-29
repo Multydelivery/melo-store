@@ -86,7 +86,7 @@ const Collection = () => {
 
       {/*Filter Options*/}
       <div className='min-w-60'>
-        <p onClick={() => setShowFilter(!showFilter)} className='my-2 text-xl flex items-center cursor-pointer gap-2'>FILTERS</p>
+        <p onClick={() => setShowFilter(!showFilter)} className='my-2 bg-gradient-to-br from-green-500 to-blue-500 opacity- backdrop-blur-3xl px-6 py-3 text-white font-semibold rounded-lg w-max text-xl flex items-center cursor-pointer gap-2'>FILTERS</p>
         <img className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
         {/*Filter by category*/}
         <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>

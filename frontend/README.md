@@ -38,7 +38,7 @@ export default {
   },
   plugins: [],
 } 
-// insert this in tailwind.config,js
+// insert this in tailwind.config.js
 21. @tailwind base;
 @tailwind components;
 @tailwind utilities; // in index.css

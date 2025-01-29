@@ -33,6 +33,14 @@ const PlaceOrder = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+
+
+  // Ensure a payment method is selected; specifically check for 'stripe' if necessary
+  if (!method) {
+    toast.error("Please select a payment method.");
+    return; // Prevent form submission if no payment method is selected
+  }
+
     try {
       let orderItems = []
 
@@ -57,18 +65,18 @@ const PlaceOrder = () => {
 
       switch (method) {
 
-        // API Calls for COD
-        case 'cod':
-          const response = await axios.post(backendUrl + '/api/order/place', orderData, { headers: { token } })
-          if (response.data.success) {
-            setCartItems()
-          } else {
-            console.log(error)
-            toast.error(response.message)
-          }
-          navigate('/orders')
-          setCartItems('')
-          break;
+        // // API Calls for COD
+        // case 'cod':
+        //   const response = await axios.post(backendUrl + '/api/order/place', orderData, { headers: { token } })
+        //   if (response.data.success) {
+        //     setCartItems()
+        //   } else {
+        //     console.log(error)
+        //     toast.error(response.message)
+        //   }
+        //   navigate('/orders')
+        //   setCartItems('')
+        //   break;
         case 'stripe':
           const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData, { headers: { token } })
           if (responseStripe.data.success) {
@@ -80,13 +88,14 @@ const PlaceOrder = () => {
 
           break;
 
-        default:
-          break;
+          default:
+            toast.error("Invalid payment method. Please select a valid option.");
+            break;
       }
 
     } catch (error) {
-
-
+      console.error(error);
+      toast.error("An error occurred while placing the order.");
     }
 
   }
@@ -208,7 +217,7 @@ const PlaceOrder = () => {
               onClick={() => setMethod('stripe')}
               className={`flex items-center gap-3 border p-2 px-3 cursor-pointer ${method === 'stripe' ? 'bg-gray-100' : ''
                 }`}
-            >
+            required>
               <span
                 className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-400' : ''
                   }`}
